@@ -1,10 +1,11 @@
-import { Box } from "@chakra-ui/react";
+import { useGetPokemons } from "api/getPokemons";
 import { FC } from "react";
 
 export const Home: FC = () => {
+	console.log(useGetPokemons().data);
 	return (
-		<Box>
+		<div>
 			<p className="App-link">Eaeee, rapaziadaa!</p>
-		</Box>
+		</div>
 	);
 };
