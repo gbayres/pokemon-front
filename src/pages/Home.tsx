@@ -1,8 +1,19 @@
 import { useGetPokemons } from "api/getPokemons";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 
 export const Home: FC = () => {
-	console.log(useGetPokemons().data);
+	const { handleCreatePokemon } = useGetPokemons();
+	useEffect(() => {
+		handleCreatePokemon({
+			pokedex_number: 2000,
+			name: 'Jhonata',
+			type1: 'fire',
+			type2: 'water',
+			is_legendary: false,
+			generation: 3,
+			abilities: ['ember']
+		})
+	}, [handleCreatePokemon])
 	return (
 		<div>
 			<p className="App-link">Eaeee, rapaziadaa!</p>
