@@ -2,12 +2,15 @@ import "./App.scss";
 import { MainRouter } from "./routes";
 import { ApolloProvider } from "@apollo/client";
 import client from './client/client';
+import { ChakraProvider } from "@chakra-ui/react";
 
 export const App = () => {
 	return (
-		<ApolloProvider client={client}>
-			<MainRouter />
-		</ApolloProvider>
+		<ChakraProvider>
+			<ApolloProvider client={client}>
+				<MainRouter />
+			</ApolloProvider>
+		</ChakraProvider>
 	);
 };
 
